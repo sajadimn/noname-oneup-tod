@@ -1,3 +1,5 @@
+using System;
+
 public class TodServerAPIData
 {
     public string gamepkg;
@@ -20,4 +22,13 @@ public class TodServerAPIResponse
 {
     public string error;
     public bool status;
+}
+
+[Serializable]
+public class TodStoreData
+{
+    public string store;
+    public string settleUrl;
+    public bool isRialPerToman;
+    public bool isMerchantId;
 }

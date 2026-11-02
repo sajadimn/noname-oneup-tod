@@ -1,13 +1,16 @@
 {
   "name": "noname-oneup-tod",
   "displayName": "TOD",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2021.3",
   "license": "Copyright (c) Noname.OneUp All rights reserved. ",
   "type": "Tools",
   "category": "Utilities",
   "description": "This package contains the client for settling store purchases on a payment server.",
-  "dependencies": {},
+  "dependencies": {
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0"
+  },
   "gitDependencies": {
     "noname-oneup-singleton": "https://github.com/sajadimn/noname-oneup-singleton.git"
   },

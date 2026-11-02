@@ -7,27 +7,27 @@ public class TodServerAPI : MonoSingleton<TodServerAPI>
 {
     private const string Android = "android";
     private const string Ios = "ios";
-    private const string ZarinPal = "Zarinpal";
 
     private TodConfig config;
 
     public void Request(TodServerAPIData todData, Action success, Action failed)
     {
         config ??= Resources.Load<TodConfig>(TodConfig.FileName);
-        if (config == null || !TodRequest.IsSupported(todData.store))
+        TodStoreData store = config != null ? TodRequest.GetStore(config.stores, todData.store) : null;
+        if (!TodRequest.CanSettle(store))
         {
             Debug.Log($"TodServerAPI - Request - Not Available: {todData.store}");
             failed?.Invoke();
             return;
         }
 
-        string url = TodRequest.BuildUrl(config.settleUrl, config.settleHttpUrl, todData, GetPlatform(todData.store));
+        string url = TodRequest.BuildUrl(store, todData, GetPlatform());
         StartCoroutine(SendRequest(todData.store, url, success, failed));
     }
 
-    private static string GetPlatform(string store)
+    private static string GetPlatform()
     {
-        return store != ZarinPal || Application.platform == RuntimePlatform.Android ? Android : Ios;
+        return Application.platform == RuntimePlatform.IPhonePlayer ? Ios : Android;
     }
 
     private IEnumerator SendRequest(string store, string url, Action success, Action failed)
