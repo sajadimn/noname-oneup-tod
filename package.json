@@ -1,0 +1,35 @@
+{
+  "name": "noname-oneup-tod",
+  "displayName": "TOD",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "license": "Copyright (c) Noname.OneUp All rights reserved. ",
+  "type": "Tools",
+  "category": "Utilities",
+  "description": "This package contains the client for settling store purchases on a payment server.",
+  "dependencies": {},
+  "gitDependencies": {
+    "noname-oneup-singleton": "https://github.com/sajadimn/noname-oneup-singleton.git"
+  },
+  "samples": [],
+  "hideInEditor": true,
+  "keywords": [
+    "Noname",
+    "OneUp",
+    "TOD",
+    "Purchase",
+    "Settle"
+  ],
+  "author": {
+    "name": "OneUp",
+    "email": "imani.sajad92@gmail.com",
+    "url": "https://github.com/sajadimn"
+  },
+  "repository": {
+    "url": "https://github.com/sajadimn/noname-oneup-tod.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/sajadimn/noname-oneup-tod"
+  }
+}
